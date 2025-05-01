@@ -1,8 +1,8 @@
-const { DataTypes } = require("sequelize")
-const sequelize = require("../resources/db");
+const { DataTypes, sequelize } = require("../resources/sequelize");
 
-const Task = sequelize.define("Task",{
+const Task = sequelize.define("Task", {
     id: {
+        autoIncrement: true,
         primaryKey: true,
         type: DataTypes.BIGINT,
         allowNull: false
@@ -19,4 +19,4 @@ const Task = sequelize.define("Task",{
     }
 });
 
-module.exports = { sequelize, Task };
+module.exports = Task;
